@@ -1,0 +1,17 @@
+Abrir el server:
+    ssh 48136212-H@zoo.urv.cat
+Copiar de Windows a server:
+    scp practica.c 48136212-H@zoo.urv.cat:.
+Compilar en la arquitectura x86 (dentro de server)
+    cc -O practica.c -o practica -lm -lpthread
+Ver la cola de cada servicio:
+    sinfo
+Ver el estado de cada servicio:
+    squeue
+Dependencias python:
+    pip install paramiko
+    pip install matplotlib
+Simular diferentes procesadores:
+    python simulaciones.py
+Generar graficos:
+    python generar_graficas.py

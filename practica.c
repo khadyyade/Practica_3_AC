@@ -19,22 +19,30 @@ double *partial_sum;    // Suma parcial por thread
 // Funcion que ejecuta cada thread
 void* funcionThread(void* arg){
     long id = (long)arg;
+    
     // Calcular el rango de indices para este thread
-
-    // Sumamos solo los puntos interiores 
-    uint64_t start = (N / nThreads) * id + 1; // Indice inicial (excluye i=0)
-    uint64_t end = (id == nThreads-1) ? N : (N / nThreads) * (id + 1); // Indice final
+    // Los threads procesarán los puntos interiores (i = 1 hasta N-1)
+    // Los puntos extremos (i=0 y i=N) se manejan en main
+    uint64_t puntos_interiores = N - 1;
+    uint64_t elementos_por_thread = puntos_interiores / nThreads;
+    uint64_t start = elementos_por_thread * id + 1;
+    uint64_t end = elementos_por_thread * (id + 1) + 1;
+    
+    // El último thread debe procesar hasta N-1 (incluye residuo de la división)
+    if (id == nThreads - 1) {
+        end = N;
+    }
 
     double local_sum = 0.0;
 
-    // Calcular la suma local para este thread
+    // Calcular la suma local para este thread (solo puntos interiores)
     for(uint64_t i = start; i < end; ++i){
-        double x = a + h * (double)i; // Punto medio del intervalo
-        local_sum += f(x); // Sumar el valor de la función en el punto x
+        double x = a + h * (double)i;
+        local_sum += f(x);
     }
 
     partial_sum[id] = local_sum;
-    pthread_exit(NULL); // Terminar el thread
+    pthread_exit(NULL);
 }
 
 

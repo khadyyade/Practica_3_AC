@@ -1,0 +1,483 @@
+RESULTADOS DE SIMULACIONES
+======================================================================
+
+
+Configuración: [orca|128CPUs] param1=10000000000, param2=4
+Código de salida: 0
+STDOUT:
+N=10000000000  Threads=4
+Integral = 3.141592653589  error = 2.935e-13
+Time = 11.766196 sec
+
+STDERR:
+srun: job 28404448 queued and waiting for resources
+srun: job 28404448 has been allocated resources
+11.76user 0.00system 0:02.94elapsed 399%CPU (0avgtext+0avgdata 1920maxresident)k
+40inputs+0outputs (1major+100minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [orca|128CPUs] param1=10000000000, param2=2
+Código de salida: 0
+STDOUT:
+N=10000000000  Threads=2
+Integral = 3.141592653590  error = 2.780e-13
+Time = 11.713205 sec
+
+STDERR:
+srun: job 28404449 queued and waiting for resources
+srun: job 28404449 has been allocated resources
+11.71user 0.00system 0:05.85elapsed 199%CPU (0avgtext+0avgdata 1924maxresident)k
+0inputs+0outputs (0major+99minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [orca|128CPUs] param1=10000000000, param2=64
+Código de salida: 0
+STDOUT:
+N=10000000000  Threads=64
+Integral = 3.141592653590  error = 2.665e-15
+Time = 14.288729 sec
+
+STDERR:
+srun: job 28404450 queued and waiting for resources
+srun: job 28404450 has been allocated resources
+14.28user 0.00system 0:00.22elapsed 6266%CPU (0avgtext+0avgdata 2280maxresident)k
+0inputs+0outputs (0major+225minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [orca|128CPUs] param1=10000000000, param2=32
+Código de salida: 0
+STDOUT:
+N=10000000000  Threads=32
+Integral = 3.141592653590  error = 2.798e-14
+Time = 12.586218 sec
+
+STDERR:
+srun: job 28404451 queued and waiting for resources
+srun: job 28404451 has been allocated resources
+12.58user 0.00system 0:00.39elapsed 3170%CPU (0avgtext+0avgdata 2076maxresident)k
+0inputs+0outputs (0major+160minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [orca|128CPUs] param1=10000000000, param2=256
+Código de salida: 0
+STDOUT:
+N=10000000000  Threads=256
+Integral = 3.141592653590  error = 7.550e-15
+Time = 26.427418 sec
+
+STDERR:
+srun: job 28404452 queued and waiting for resources
+srun: job 28404452 has been allocated resources
+26.41user 0.01system 0:00.22elapsed 11591%CPU (0avgtext+0avgdata 3876maxresident)k
+0inputs+0outputs (0major+624minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [orca|128CPUs] param1=10000000000, param2=16
+Código de salida: 0
+STDOUT:
+N=10000000000  Threads=16
+Integral = 3.141592653590  error = 5.196e-14
+Time = 12.164904 sec
+
+STDERR:
+srun: job 28404453 queued and waiting for resources
+srun: job 28404453 has been allocated resources
+12.16user 0.00system 0:00.76elapsed 1581%CPU (0avgtext+0avgdata 2016maxresident)k
+0inputs+0outputs (0major+127minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [orca|128CPUs] param1=10000000000, param2=8
+Código de salida: 0
+STDOUT:
+N=10000000000  Threads=8
+Integral = 3.141592653590  error = 1.230e-13
+Time = 11.917659 sec
+
+STDERR:
+srun: job 28404454 queued and waiting for resources
+srun: job 28404454 has been allocated resources
+11.91user 0.00system 0:01.49elapsed 799%CPU (0avgtext+0avgdata 1944maxresident)k
+0inputs+0outputs (0major+112minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [orca|128CPUs] param1=10000000000, param2=128
+Código de salida: 0
+STDOUT:
+N=10000000000  Threads=128
+Integral = 3.141592653590  error = 3.109e-15
+Time = 28.393565 sec
+
+STDERR:
+srun: job 28404455 queued and waiting for resources
+srun: job 28404455 has been allocated resources
+28.38user 0.00system 0:00.25elapsed 11091%CPU (0avgtext+0avgdata 2856maxresident)k
+0inputs+0outputs (0major+356minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [orca|128CPUs] param1=20000000000, param2=2
+Código de salida: 0
+STDOUT:
+N=20000000000  Threads=2
+Integral = 3.141592653589  error = 1.110e-12
+Time = 23.359586 sec
+
+STDERR:
+srun: job 28404456 queued and waiting for resources
+srun: job 28404456 has been allocated resources
+23.35user 0.00system 0:11.69elapsed 199%CPU (0avgtext+0avgdata 1872maxresident)k
+0inputs+0outputs (0major+98minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [orca|128CPUs] param1=20000000000, param2=4
+Código de salida: 0
+STDOUT:
+N=20000000000  Threads=4
+Integral = 3.141592653590  error = 5.063e-14
+Time = 23.427812 sec
+
+STDERR:
+srun: job 28404457 queued and waiting for resources
+srun: job 28404457 has been allocated resources
+23.42user 0.00system 0:05.85elapsed 399%CPU (0avgtext+0avgdata 1908maxresident)k
+0inputs+0outputs (0major+100minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [orca|128CPUs] param1=20000000000, param2=8
+Código de salida: 0
+STDOUT:
+N=20000000000  Threads=8
+Integral = 3.141592653589  error = 2.980e-13
+Time = 23.691533 sec
+
+STDERR:
+srun: job 28404458 queued and waiting for resources
+srun: job 28404458 has been allocated resources
+23.69user 0.00system 0:02.96elapsed 799%CPU (0avgtext+0avgdata 1852maxresident)k
+0inputs+0outputs (0major+109minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [orca|128CPUs] param1=20000000000, param2=16
+Código de salida: 0
+STDOUT:
+N=20000000000  Threads=16
+Integral = 3.141592653590  error = 2.620e-14
+Time = 24.157361 sec
+
+STDERR:
+srun: job 28404459 queued and waiting for resources
+srun: job 28404459 has been allocated resources
+24.15user 0.00system 0:01.51elapsed 1595%CPU (0avgtext+0avgdata 1912maxresident)k
+0inputs+0outputs (0major+125minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [orca|128CPUs] param1=20000000000, param2=32
+Código de salida: 0
+STDOUT:
+N=20000000000  Threads=32
+Integral = 3.141592653590  error = 8.571e-14
+Time = 24.623409 sec
+
+STDERR:
+srun: job 28404460 queued and waiting for resources
+srun: job 28404460 has been allocated resources
+24.61user 0.00system 0:00.77elapsed 3185%CPU (0avgtext+0avgdata 2140maxresident)k
+0inputs+0outputs (0major+159minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [orca|128CPUs] param1=20000000000, param2=64
+Código de salida: 0
+STDOUT:
+N=20000000000  Threads=64
+Integral = 3.141592653590  error = 2.887e-14
+Time = 27.534255 sec
+
+STDERR:
+srun: job 28404461 queued and waiting for resources
+srun: job 28404461 has been allocated resources
+27.53user 0.00system 0:00.44elapsed 6201%CPU (0avgtext+0avgdata 2348maxresident)k
+0inputs+0outputs (0major+226minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [orca|128CPUs] param1=20000000000, param2=128
+Código de salida: 0
+STDOUT:
+N=20000000000  Threads=128
+Integral = 3.141592653590  error = 3.020e-14
+Time = 55.067604 sec
+
+STDERR:
+srun: job 28404462 queued and waiting for resources
+srun: job 28404462 has been allocated resources
+55.05user 0.01system 0:00.43elapsed 12572%CPU (0avgtext+0avgdata 2740maxresident)k
+0inputs+0outputs (0major+358minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [orca|128CPUs] param1=20000000000, param2=256
+Código de salida: 0
+STDOUT:
+N=20000000000  Threads=256
+Integral = 3.141592653590  error = 1.821e-14
+Time = 52.432415 sec
+
+STDERR:
+srun: job 28404463 queued and waiting for resources
+srun: job 28404463 has been allocated resources
+52.41user 0.01system 0:00.45elapsed 11498%CPU (0avgtext+0avgdata 7928maxresident)k
+0inputs+0outputs (0major+626minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [orca|128CPUs] param1=40000000000, param2=2
+Código de salida: 0
+STDOUT:
+N=40000000000  Threads=2
+Integral = 3.141592653592  error = 2.187e-12
+Time = 46.694361 sec
+
+STDERR:
+srun: job 28404464 queued and waiting for resources
+srun: job 28404464 has been allocated resources
+46.69user 0.00system 0:23.35elapsed 199%CPU (0avgtext+0avgdata 1824maxresident)k
+0inputs+0outputs (0major+99minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [orca|128CPUs] param1=40000000000, param2=4
+Código de salida: 0
+STDOUT:
+N=40000000000  Threads=4
+Integral = 3.141592653596  error = 6.033e-12
+Time = 46.759661 sec
+
+STDERR:
+srun: job 28404465 queued and waiting for resources
+srun: job 28404465 has been allocated resources
+46.76user 0.00system 0:11.69elapsed 399%CPU (0avgtext+0avgdata 1884maxresident)k
+0inputs+0outputs (0major+103minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [orca|128CPUs] param1=40000000000, param2=8
+Código de salida: 0
+STDOUT:
+N=40000000000  Threads=8
+Integral = 3.141592653591  error = 7.359e-13
+Time = 47.418003 sec
+
+STDERR:
+srun: job 28404466 queued and waiting for resources
+srun: job 28404466 has been allocated resources
+47.41user 0.00system 0:05.92elapsed 799%CPU (0avgtext+0avgdata 1944maxresident)k
+0inputs+0outputs (0major+108minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [orca|128CPUs] param1=40000000000, param2=16
+Código de salida: 0
+STDOUT:
+N=40000000000  Threads=16
+Integral = 3.141592653590  error = 1.932e-13
+Time = 48.262256 sec
+
+STDERR:
+srun: job 28404467 queued and waiting for resources
+srun: job 28404467 has been allocated resources
+48.26user 0.00system 0:03.02elapsed 1598%CPU (0avgtext+0avgdata 2012maxresident)k
+0inputs+0outputs (0major+127minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [orca|128CPUs] param1=40000000000, param2=32
+Código de salida: 0
+STDOUT:
+N=40000000000  Threads=32
+Integral = 3.141592653589  error = 6.191e-13
+Time = 48.951379 sec
+
+STDERR:
+srun: job 28404468 queued and waiting for resources
+srun: job 28404468 has been allocated resources
+48.94user 0.00system 0:01.53elapsed 3184%CPU (0avgtext+0avgdata 2016maxresident)k
+0inputs+0outputs (0major+159minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [orca|128CPUs] param1=40000000000, param2=64
+Código de salida: 0
+STDOUT:
+N=40000000000  Threads=64
+Integral = 3.141592653590  error = 3.326e-13
+Time = 54.020003 sec
+
+STDERR:
+srun: job 28404469 queued and waiting for resources
+srun: job 28404469 has been allocated resources
+54.02user 0.00system 0:00.85elapsed 6347%CPU (0avgtext+0avgdata 2280maxresident)k
+0inputs+0outputs (0major+226minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [orca|128CPUs] param1=40000000000, param2=128
+Código de salida: 0
+STDOUT:
+N=40000000000  Threads=128
+Integral = 3.141592653590  error = 1.434e-13
+Time = 108.300572 sec
+
+STDERR:
+srun: job 28404470 queued and waiting for resources
+srun: job 28404470 has been allocated resources
+108.29user 0.00system 0:00.85elapsed 12666%CPU (0avgtext+0avgdata 2740maxresident)k
+0inputs+0outputs (0major+357minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [orca|128CPUs] param1=40000000000, param2=256
+Código de salida: 0
+STDOUT:
+N=40000000000  Threads=256
+Integral = 3.141592653590  error = 1.732e-14
+Time = 105.495821 sec
+
+STDERR:
+srun: job 28404471 queued and waiting for resources
+srun: job 28404471 has been allocated resources
+105.48user 0.01system 0:00.91elapsed 11592%CPU (0avgtext+0avgdata 7944maxresident)k
+0inputs+0outputs (0major+621minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [orca|128CPUs] param1=60000000000, param2=2
+Código de salida: 0
+STDOUT:
+N=60000000000  Threads=2
+Integral = 3.141592653593  error = 2.963e-12
+Time = 70.058372 sec
+
+STDERR:
+srun: job 28404472 queued and waiting for resources
+srun: job 28404472 has been allocated resources
+70.05user 0.00system 0:35.03elapsed 199%CPU (0avgtext+0avgdata 1900maxresident)k
+0inputs+0outputs (0major+97minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [orca|128CPUs] param1=60000000000, param2=4
+Código de salida: 0
+STDOUT:
+N=60000000000  Threads=4
+Integral = 3.141592653595  error = 5.394e-12
+Time = 70.157627 sec
+
+STDERR:
+srun: job 28404473 queued and waiting for resources
+srun: job 28404473 has been allocated resources
+70.15user 0.00system 0:17.54elapsed 399%CPU (0avgtext+0avgdata 1920maxresident)k
+0inputs+0outputs (0major+104minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [orca|128CPUs] param1=60000000000, param2=8
+Código de salida: 0
+STDOUT:
+N=60000000000  Threads=8
+Integral = 3.141592653590  error = 2.487e-13
+Time = 71.056334 sec
+
+STDERR:
+srun: job 28404474 queued and waiting for resources
+srun: job 28404474 has been allocated resources
+71.05user 0.00system 0:08.88elapsed 799%CPU (0avgtext+0avgdata 1964maxresident)k
+0inputs+0outputs (0major+108minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [orca|128CPUs] param1=60000000000, param2=16
+Código de salida: 0
+STDOUT:
+N=60000000000  Threads=16
+Integral = 3.141592653589  error = 6.875e-13
+Time = 72.522090 sec
+
+STDERR:
+srun: job 28404475 queued and waiting for resources
+srun: job 28404475 has been allocated resources
+72.52user 0.00system 0:04.53elapsed 1598%CPU (0avgtext+0avgdata 1944maxresident)k
+0inputs+0outputs (0major+129minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [orca|128CPUs] param1=60000000000, param2=32
+Código de salida: 0
+STDOUT:
+N=60000000000  Threads=32
+Integral = 3.141592653590  error = 9.770e-14
+Time = 73.583612 sec
+
+STDERR:
+srun: job 28404476 queued and waiting for resources
+srun: job 28404476 has been allocated resources
+73.58user 0.00system 0:02.30elapsed 3192%CPU (0avgtext+0avgdata 2068maxresident)k
+0inputs+0outputs (0major+160minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [orca|128CPUs] param1=60000000000, param2=64
+Código de salida: 0
+STDOUT:
+N=60000000000  Threads=64
+Integral = 3.141592653590  error = 2.913e-13
+Time = 80.703120 sec
+
+STDERR:
+srun: job 28404477 queued and waiting for resources
+srun: job 28404477 has been allocated resources
+80.69user 0.00system 0:01.27elapsed 6339%CPU (0avgtext+0avgdata 2428maxresident)k
+0inputs+0outputs (0major+225minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [orca|128CPUs] param1=60000000000, param2=128
+Código de salida: 0
+STDOUT:
+N=60000000000  Threads=128
+Integral = 3.141592653590  error = 3.642e-14
+Time = 162.420466 sec
+
+STDERR:
+srun: job 28404478 queued and waiting for resources
+srun: job 28404478 has been allocated resources
+162.41user 0.00system 0:01.27elapsed 12728%CPU (0avgtext+0avgdata 2800maxresident)k
+0inputs+0outputs (0major+359minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [orca|128CPUs] param1=60000000000, param2=256
+Código de salida: 0
+STDOUT:
+N=60000000000  Threads=256
+Integral = 3.141592653590  error = 3.553e-15
+Time = 158.819935 sec
+
+STDERR:
+srun: job 28404479 queued and waiting for resources
+srun: job 28404479 has been allocated resources
+158.80user 0.02system 0:01.38elapsed 11442%CPU (0avgtext+0avgdata 3864maxresident)k
+0inputs+0outputs (0major+623minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
