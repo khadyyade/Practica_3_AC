@@ -2,6 +2,7 @@ import re
 import matplotlib.pyplot as plt
 import numpy as np
 from pathlib import Path
+from scipy.optimize import curve_fit
 
 # Configuración de estilo para gráficas bonitas
 plt.style.use('seaborn-v0_8-darkgrid')
@@ -359,6 +360,241 @@ def generar_tabla_resumen(datos, simulador, archivo_salida):
     
     print(f"✓ Tabla resumen guardada: {archivo_salida}")
 
+def ley_amdahl(p, f):
+    """
+    Calcula el speedup según la Ley de Amdahl.
+    
+    Args:
+        p: Número de procesadores
+        f: Fracción paralelizable del código (0 a 1)
+    
+    Returns:
+        Speedup teórico
+    """
+    return 1.0 / ((1.0 - f) + f / p)
+
+def estimar_fraccion_paralelizable(threads, speedups):
+    """
+    Estima la fracción paralelizable 'f' ajustando la Ley de Amdahl a los datos reales.
+    
+    Args:
+        threads: Lista de números de threads
+        speedups: Lista de speedups observados
+    
+    Returns:
+        f: Fracción paralelizable estimada (0 a 1)
+    """
+    try:
+        # Ajustar la curva de Amdahl a los datos reales
+        # bounds para f: entre 0 y 1
+        popt, _ = curve_fit(ley_amdahl, threads, speedups, 
+                           bounds=([0.0], [1.0]),
+                           p0=[0.95])
+        return popt[0]
+    except:
+        # Si falla el ajuste, usar una estimación simple
+        # Usar los datos de mayor número de threads
+        max_threads = max(threads)
+        max_speedup = speedups[threads.index(max_threads)]
+        # De Speedup = 1/((1-f) + f/p), despejamos f
+        # f ≈ (Speedup * p - p) / (Speedup * p - 1)
+        f_estimado = (max_speedup * max_threads - max_threads) / (max_speedup * max_threads - 1)
+        return max(0.0, min(1.0, f_estimado))
+
+def grafica_ley_amdahl(datos, simulador, archivo_salida):
+    """
+    Genera gráfica comparando speedup real vs Ley de Amdahl.
+    Proyecta el comportamiento teórico para 2 hasta 256 e infinitos procesadores.
+    """
+    plt.figure(figsize=(16, 10))
+    
+    if simulador not in datos:
+        print(f"No hay datos para el simulador {simulador}")
+        return
+    
+    tiempos_base = extraer_tiempo_secuencial(datos, simulador)
+    
+    # Rango de procesadores para proyección teórica
+    p_teorico = np.array([2, 4, 8, 16, 32, 64, 128, 256])
+    
+    # Para cada valor de N
+    for N in sorted(datos[simulador].keys()):
+        if N not in tiempos_base:
+            continue
+        
+        # Datos reales
+        threads = np.array(sorted(datos[simulador][N].keys()))
+        tiempo_base = tiempos_base[N]
+        speedups_reales = np.array([tiempo_base / datos[simulador][N][t]['time'] for t in threads])
+        
+        # Estimar fracción paralelizable desde datos reales
+        f = estimar_fraccion_paralelizable(threads.tolist(), speedups_reales.tolist())
+        
+        # Speedup teórico según Ley de Amdahl
+        speedups_teoricos = ley_amdahl(p_teorico, f)
+        
+        # Speedup para infinitos procesadores
+        speedup_infinito = 1.0 / (1.0 - f)
+        
+        # Graficar datos reales
+        plt.plot(threads, speedups_reales, 
+                marker='o', 
+                color=COLORES_N[N],
+                label=f'{ETIQUETAS_N[N]} (Real)',
+                linewidth=2.5,
+                markersize=8)
+        
+        # Graficar proyección teórica (Ley de Amdahl)
+        plt.plot(p_teorico, speedups_teoricos,
+                linestyle='--',
+                color=COLORES_N[N],
+                label=f'{ETIQUETAS_N[N]} (Amdahl, f={f:.3f})',
+                linewidth=2,
+                alpha=0.7)
+        
+        # Línea horizontal para speedup máximo (infinitos procesadores)
+        plt.axhline(y=speedup_infinito, 
+                   color=COLORES_N[N], 
+                   linestyle=':', 
+                   linewidth=1.5,
+                   alpha=0.5)
+        
+        # Anotación del límite teórico
+        plt.text(256, speedup_infinito, 
+                f'  Máx={speedup_infinito:.1f}',
+                color=COLORES_N[N],
+                fontsize=9,
+                va='center')
+    
+    # Speedup ideal (lineal)
+    speedup_ideal = p_teorico / 2  # Normalizado a 2 threads
+    plt.plot(p_teorico, speedup_ideal, 
+            'k-', 
+            label='Speedup Ideal (100% paralelizable)',
+            linewidth=3,
+            alpha=0.5)
+    
+    plt.xlabel('Número de Procesadores', fontsize=13, fontweight='bold')
+    plt.ylabel('Speedup', fontsize=13, fontweight='bold')
+    plt.title(f'Análisis según Ley de Amdahl - Simulador: {simulador.upper()}\n' + 
+              r'Speedup$(p) = \frac{1}{(1-f) + \frac{f}{p}}$' + 
+              '\n(Líneas sólidas = Real | Líneas punteadas = Ley de Amdahl | Líneas : = Límite ∞)',
+              fontsize=14, fontweight='bold', pad=20)
+    plt.legend(loc='upper left', frameon=True, shadow=True, fontsize=9, ncol=2)
+    plt.grid(True, alpha=0.3, linestyle='--')
+    plt.xscale('log', base=2)
+    
+    # Configurar ticks en el eje X
+    plt.xticks([2, 4, 8, 16, 32, 64, 128, 256], 
+               ['2', '4', '8', '16', '32', '64', '128', '256'])
+    
+    plt.tight_layout()
+    plt.savefig(archivo_salida, dpi=300, bbox_inches='tight')
+    print(f"✓ Gráfica guardada: {archivo_salida}")
+    plt.close()
+
+def generar_analisis_amdahl(datos, simulador, archivo_salida):
+    """
+    Genera análisis detallado de la Ley de Amdahl en formato texto.
+    Proyecta speedup para 2 hasta 256 e infinitos procesadores.
+    """
+    if simulador not in datos:
+        return
+    
+    tiempos_base = extraer_tiempo_secuencial(datos, simulador)
+    
+    with open(archivo_salida, 'w', encoding='utf-8') as f:
+        f.write("="*120 + "\n")
+        f.write(f"ANÁLISIS SEGÚN LEY DE AMDAHL - SIMULADOR: {simulador.upper()}\n")
+        f.write("="*120 + "\n\n")
+        
+        f.write("La Ley de Amdahl modela el speedup máximo alcanzable:\n")
+        f.write("    Speedup(p) = 1 / ((1-f) + f/p)\n\n")
+        f.write("Donde:\n")
+        f.write("    f = fracción paralelizable del código (0 a 1)\n")
+        f.write("    p = número de procesadores\n")
+        f.write("    (1-f) = fracción secuencial (cuello de botella)\n")
+        f.write("    Speedup máximo (p → ∞) = 1 / (1-f)\n\n")
+        f.write("="*120 + "\n\n")
+        
+        # Procesadores para proyección
+        procesadores = [2, 4, 8, 16, 32, 64, 128, 256]
+        
+        for N in sorted(datos[simulador].keys()):
+            if N not in tiempos_base:
+                continue
+            
+            f.write(f"\n{'='*120}\n")
+            f.write(f"{ETIQUETAS_N[N]} iteraciones\n")
+            f.write(f"{'='*120}\n\n")
+            
+            # Calcular speedups reales
+            threads = np.array(sorted(datos[simulador][N].keys()))
+            tiempo_base = tiempos_base[N]
+            speedups_reales = np.array([tiempo_base / datos[simulador][N][t]['time'] for t in threads])
+            
+            # Estimar f
+            f_estimado = estimar_fraccion_paralelizable(threads.tolist(), speedups_reales.tolist())
+            fraccion_secuencial = 1.0 - f_estimado
+            speedup_maximo = 1.0 / fraccion_secuencial if fraccion_secuencial > 0 else float('inf')
+            
+            f.write(f"PARÁMETROS ESTIMADOS:\n")
+            f.write(f"  • Fracción paralelizable (f):     {f_estimado:.4f} ({f_estimado*100:.2f}%)\n")
+            f.write(f"  • Fracción secuencial (1-f):      {fraccion_secuencial:.4f} ({fraccion_secuencial*100:.2f}%)\n")
+            f.write(f"  • Speedup máximo teórico (p→∞):   {speedup_maximo:.2f}x\n")
+            f.write(f"  • Tiempo base (2 threads):        {tiempo_base:.6f} segundos\n\n")
+            
+            # Tabla comparativa
+            f.write("-"*120 + "\n")
+            f.write(f"{'Procesadores':<15} {'Speedup Real':<15} {'Speedup Amdahl':<18} {'Diferencia':<15} {'Eficiencia (%)':<18}\n")
+            f.write("-"*120 + "\n")
+            
+            for p in procesadores:
+                speedup_teorico = ley_amdahl(p, f_estimado)
+                
+                if p in datos[simulador][N]:
+                    tiempo_actual = datos[simulador][N][p]['time']
+                    speedup_real = tiempo_base / tiempo_actual
+                    diferencia = speedup_real - speedup_teorico
+                    eficiencia = (speedup_real / p) * 100
+                    f.write(f"{p:<15} {speedup_real:<15.2f} {speedup_teorico:<18.2f} {diferencia:<+15.2f} {eficiencia:<18.2f}\n")
+                else:
+                    f.write(f"{p:<15} {'N/A':<15} {speedup_teorico:<18.2f} {'N/A':<15} {'N/A':<18}\n")
+            
+            # Speedup para infinitos procesadores
+            f.write(f"{'∞ (infinito)':<15} {'—':<15} {speedup_maximo:<18.2f} {'—':<15} {'—':<18}\n")
+            f.write("-"*120 + "\n\n")
+            
+            # Análisis de cuello de botella
+            f.write("ANÁLISIS:\n")
+            if fraccion_secuencial > 0.1:
+                f.write(f"  ⚠ La fracción secuencial ({fraccion_secuencial*100:.1f}%) es significativa.\n")
+                f.write(f"    Esto limita el speedup máximo a {speedup_maximo:.1f}x, independientemente del número de procesadores.\n")
+            elif fraccion_secuencial > 0.05:
+                f.write(f"  ⚠ Hay una fracción secuencial moderada ({fraccion_secuencial*100:.1f}%).\n")
+                f.write(f"    El speedup máximo alcanzable es {speedup_maximo:.1f}x.\n")
+            else:
+                f.write(f"  ✓ El código es altamente paralelizable ({f_estimado*100:.1f}%).\n")
+                f.write(f"    El speedup máximo teórico es {speedup_maximo:.1f}x.\n")
+            
+            if max(speedups_reales) > 0.9 * speedup_maximo:
+                f.write(f"  ✓ El speedup real ({max(speedups_reales):.1f}x) está cerca del límite teórico.\n")
+            else:
+                porcentaje_aprovechado = (max(speedups_reales) / speedup_maximo) * 100
+                f.write(f"  • Se está aprovechando el {porcentaje_aprovechado:.1f}% del speedup máximo posible.\n")
+            
+            f.write("\n")
+        
+        f.write("\n" + "="*120 + "\n")
+        f.write("CONCLUSIÓN:\n")
+        f.write("="*120 + "\n")
+        f.write("La Ley de Amdahl demuestra que la porción secuencial del código (por pequeña que sea)\n")
+        f.write("establece un límite fundamental al speedup máximo alcanzable, independientemente de\n")
+        f.write("cuántos procesadores se utilicen. Este es el 'cuello de botella' inherente a la\n")
+        f.write("paralelización.\n\n")
+    
+    print(f"✓ Análisis de Amdahl guardado: {archivo_salida}")
+
 def main():
     """
     Función principal que coordina la generación de todas las gráficas.
@@ -408,6 +644,13 @@ def main():
             
             grafica_escalabilidad_fuerte(datos, simulador, 
                                         directorio / f"escalabilidad_fuerte_{simulador}.png")
+            
+            # Gráfica y análisis de Ley de Amdahl
+            grafica_ley_amdahl(datos, simulador,
+                             directorio / f"ley_amdahl_{simulador}.png")
+            
+            generar_analisis_amdahl(datos, simulador,
+                                  directorio / f"analisis_amdahl_{simulador}.txt")
             
             # Generar tabla resumen
             generar_tabla_resumen(datos, simulador, 

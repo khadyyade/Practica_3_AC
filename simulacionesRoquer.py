@@ -7,13 +7,26 @@ SERVIDOR_HOST = "zoo.urv.cat"
 SERVIDOR_USER = "48136212-H"
 NOMBRE_ARCHIVO = "practica"
 
+"""
+Finalment la màquina Teen no funciona i toca adaptar la pràtica P3 a aquesta nova situació.
+
+Així canviem tota la informació relativa a Teen per la màquina Roquer. Teniu acces de la mateixa manera pero la comanda d'execucio a roquer quedaria:
+
+$ srun -p roquer -c 12 time ./practica arguments.....
+
+Aquest servidor, te un únic processador: "Intel(R) Core(TM) i7-5820K CPU @ 3.30GHz" amb 6 cores i 2 threads per core, per tant un màxim de 12 threads simultànis. Te 16GB de RAM que ja és suficient per executar el càlcul de Pi. En seqüencial triga: 38.96, 77.87, 155.72 i 233.54 per les quatre mides del problema: 10G, 20G, 40G i 60G respectivament.
+
+La idea és lliurat el mateix que diu l'enunciat, pero on diu "_Xeon" posarem "_i7".
+
+"""
+
 # Parámetros de simulación
 PARAM1_VALUES = [10000000000, 20000000000, 40000000000, 60000000000]
 PARAM2_VALUES = [2, 4, 8, 16, 32, 64, 128, 256]
 
 # Configuraciones de simulación
 CONFIGURACIONES = [
-    {"simulador": "teen", "cpus": 32},
+    {"simulador": "roquer", "cpus": 12},
     # {"simulador": "orca", "cpus": 128}
 ]
 

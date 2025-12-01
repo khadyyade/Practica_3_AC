@@ -1,0 +1,483 @@
+RESULTADOS DE SIMULACIONES
+======================================================================
+
+
+Configuración: [roquer|12CPUs] param1=10000000000, param2=2
+Código de salida: 0
+STDOUT:
+N=10000000000  Threads=2
+Integral = 3.141592653590  error = 2.780e-13
+Time = 19.679392 sec
+
+STDERR:
+srun: job 28404874 queued and waiting for resources
+srun: job 28404874 has been allocated resources
+39.34user 0.00system 0:19.68elapsed 199%CPU (0avgtext+0avgdata 1836maxresident)k
+40inputs+0outputs (1major+99minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [roquer|12CPUs] param1=10000000000, param2=4
+Código de salida: 0
+STDOUT:
+N=10000000000  Threads=4
+Integral = 3.141592653589  error = 2.935e-13
+Time = 10.324348 sec
+
+STDERR:
+srun: job 28404875 queued and waiting for resources
+srun: job 28404875 has been allocated resources
+41.24user 0.00system 0:10.32elapsed 399%CPU (0avgtext+0avgdata 1736maxresident)k
+0inputs+0outputs (0major+98minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [roquer|12CPUs] param1=10000000000, param2=128
+Código de salida: 0
+STDOUT:
+N=10000000000  Threads=128
+Integral = 3.141592653590  error = 3.109e-15
+Time = 6.883313 sec
+
+STDERR:
+srun: job 28404876 queued and waiting for resources
+srun: job 28404876 has been allocated resources
+81.86user 0.00system 0:06.88elapsed 1189%CPU (0avgtext+0avgdata 2876maxresident)k
+0inputs+0outputs (0major+363minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [roquer|12CPUs] param1=10000000000, param2=32
+Código de salida: 0
+STDOUT:
+N=10000000000  Threads=32
+Integral = 3.141592653590  error = 2.798e-14
+Time = 6.914048 sec
+
+STDERR:
+srun: job 28404877 queued and waiting for resources
+srun: job 28404877 has been allocated resources
+82.17user 0.00system 0:06.91elapsed 1188%CPU (0avgtext+0avgdata 4024maxresident)k
+0inputs+0outputs (0major+162minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [roquer|12CPUs] param1=10000000000, param2=256
+Código de salida: 0
+STDOUT:
+N=10000000000  Threads=256
+Integral = 3.141592653590  error = 7.550e-15
+Time = 6.875872 sec
+
+STDERR:
+srun: job 28404878 queued and waiting for resources
+srun: job 28404878 has been allocated resources
+82.45user 0.01system 0:06.87elapsed 1199%CPU (0avgtext+0avgdata 3760maxresident)k
+0inputs+0outputs (0major+625minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [roquer|12CPUs] param1=10000000000, param2=64
+Código de salida: 0
+STDOUT:
+N=10000000000  Threads=64
+Integral = 3.141592653590  error = 2.665e-15
+Time = 6.876088 sec
+
+STDERR:
+srun: job 28404879 queued and waiting for resources
+srun: job 28404879 has been allocated resources
+82.42user 0.00system 0:06.87elapsed 1198%CPU (0avgtext+0avgdata 2276maxresident)k
+0inputs+0outputs (0major+226minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [roquer|12CPUs] param1=10000000000, param2=8
+Código de salida: 0
+STDOUT:
+N=10000000000  Threads=8
+Integral = 3.141592653590  error = 1.230e-13
+Time = 7.817601 sec
+
+STDERR:
+srun: job 28404880 queued and waiting for resources
+srun: job 28404880 has been allocated resources
+51.76user 0.00system 0:07.81elapsed 662%CPU (0avgtext+0avgdata 1796maxresident)k
+0inputs+0outputs (0major+111minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [roquer|12CPUs] param1=10000000000, param2=16
+Código de salida: 0
+STDOUT:
+N=10000000000  Threads=16
+Integral = 3.141592653590  error = 5.196e-14
+Time = 7.031257 sec
+
+STDERR:
+srun: job 28404881 queued and waiting for resources
+srun: job 28404881 has been allocated resources
+80.25user 0.00system 0:07.03elapsed 1141%CPU (0avgtext+0avgdata 1940maxresident)k
+0inputs+0outputs (0major+127minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [roquer|12CPUs] param1=20000000000, param2=2
+Código de salida: 0
+STDOUT:
+N=20000000000  Threads=2
+Integral = 3.141592653589  error = 1.110e-12
+Time = 39.313614 sec
+
+STDERR:
+srun: job 28404882 queued and waiting for resources
+srun: job 28404882 has been allocated resources
+78.62user 0.00system 0:39.31elapsed 199%CPU (0avgtext+0avgdata 2900maxresident)k
+0inputs+0outputs (0major+99minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [roquer|12CPUs] param1=20000000000, param2=4
+Código de salida: 0
+STDOUT:
+N=20000000000  Threads=4
+Integral = 3.141592653590  error = 5.063e-14
+Time = 20.622788 sec
+
+STDERR:
+srun: job 28404883 queued and waiting for resources
+srun: job 28404883 has been allocated resources
+82.42user 0.00system 0:20.62elapsed 399%CPU (0avgtext+0avgdata 1872maxresident)k
+0inputs+0outputs (0major+103minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [roquer|12CPUs] param1=20000000000, param2=8
+Código de salida: 0
+STDOUT:
+N=20000000000  Threads=8
+Integral = 3.141592653589  error = 2.980e-13
+Time = 15.486943 sec
+
+STDERR:
+srun: job 28404884 queued and waiting for resources
+srun: job 28404884 has been allocated resources
+103.14user 0.00system 0:15.48elapsed 666%CPU (0avgtext+0avgdata 1792maxresident)k
+0inputs+0outputs (0major+109minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [roquer|12CPUs] param1=20000000000, param2=16
+Código de salida: 0
+STDOUT:
+N=20000000000  Threads=16
+Integral = 3.141592653590  error = 2.620e-14
+Time = 13.970846 sec
+
+STDERR:
+srun: job 28404885 queued and waiting for resources
+srun: job 28404885 has been allocated resources
+162.39user 0.00system 0:13.97elapsed 1162%CPU (0avgtext+0avgdata 1812maxresident)k
+0inputs+0outputs (0major+125minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [roquer|12CPUs] param1=20000000000, param2=32
+Código de salida: 0
+STDOUT:
+N=20000000000  Threads=32
+Integral = 3.141592653590  error = 8.571e-14
+Time = 13.862998 sec
+
+STDERR:
+srun: job 28404886 queued and waiting for resources
+srun: job 28404886 has been allocated resources
+164.59user 0.00system 0:13.86elapsed 1187%CPU (0avgtext+0avgdata 2072maxresident)k
+0inputs+0outputs (0major+160minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [roquer|12CPUs] param1=20000000000, param2=64
+Código de salida: 0
+STDOUT:
+N=20000000000  Threads=64
+Integral = 3.141592653590  error = 2.887e-14
+Time = 13.761360 sec
+
+STDERR:
+srun: job 28404887 queued and waiting for resources
+srun: job 28404887 has been allocated resources
+164.87user 0.00system 0:13.76elapsed 1198%CPU (0avgtext+0avgdata 2280maxresident)k
+0inputs+0outputs (0major+228minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [roquer|12CPUs] param1=20000000000, param2=128
+Código de salida: 0
+STDOUT:
+N=20000000000  Threads=128
+Integral = 3.141592653590  error = 3.020e-14
+Time = 13.748687 sec
+
+STDERR:
+srun: job 28404888 queued and waiting for resources
+srun: job 28404888 has been allocated resources
+164.94user 0.00system 0:13.74elapsed 1199%CPU (0avgtext+0avgdata 2820maxresident)k
+0inputs+0outputs (0major+364minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [roquer|12CPUs] param1=20000000000, param2=256
+Código de salida: 0
+STDOUT:
+N=20000000000  Threads=256
+Integral = 3.141592653590  error = 1.821e-14
+Time = 13.774897 sec
+
+STDERR:
+srun: job 28404889 queued and waiting for resources
+srun: job 28404889 has been allocated resources
+164.54user 0.01system 0:13.77elapsed 1194%CPU (0avgtext+0avgdata 7960maxresident)k
+0inputs+0outputs (0major+627minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [roquer|12CPUs] param1=40000000000, param2=2
+Código de salida: 0
+STDOUT:
+N=40000000000  Threads=2
+Integral = 3.141592653592  error = 2.187e-12
+Time = 78.597296 sec
+
+STDERR:
+srun: job 28404890 queued and waiting for resources
+srun: job 28404890 has been allocated resources
+157.19user 0.00system 1:18.59elapsed 199%CPU (0avgtext+0avgdata 1896maxresident)k
+0inputs+0outputs (0major+98minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [roquer|12CPUs] param1=40000000000, param2=4
+Código de salida: 0
+STDOUT:
+N=40000000000  Threads=4
+Integral = 3.141592653596  error = 6.033e-12
+Time = 41.207414 sec
+
+STDERR:
+srun: job 28404891 queued and waiting for resources
+srun: job 28404891 has been allocated resources
+164.80user 0.00system 0:41.20elapsed 399%CPU (0avgtext+0avgdata 1852maxresident)k
+0inputs+0outputs (0major+102minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [roquer|12CPUs] param1=40000000000, param2=8
+Código de salida: 0
+STDOUT:
+N=40000000000  Threads=8
+Integral = 3.141592653591  error = 7.359e-13
+Time = 30.976138 sec
+
+STDERR:
+srun: job 28404892 queued and waiting for resources
+srun: job 28404892 has been allocated resources
+206.27user 0.00system 0:30.97elapsed 665%CPU (0avgtext+0avgdata 1780maxresident)k
+0inputs+0outputs (0major+109minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [roquer|12CPUs] param1=40000000000, param2=64
+Código de salida: 0
+STDOUT:
+N=40000000000  Threads=64
+Integral = 3.141592653590  error = 3.326e-13
+Time = 27.509183 sec
+
+STDERR:
+srun: job 28404896 queued and waiting for resources
+srun: job 28404896 has been allocated resources
+329.17user 0.01system 0:27.51elapsed 1196%CPU (0avgtext+0avgdata 6356maxresident)k
+0inputs+0outputs (0major+226minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [roquer|12CPUs] param1=60000000000, param2=4
+Código de salida: 0
+STDOUT:
+N=60000000000  Threads=4
+Integral = 3.141592653595  error = 5.394e-12
+Time = 61.806889 sec
+
+STDERR:
+srun: job 28404900 queued and waiting for resources
+srun: job 28404900 has been allocated resources
+247.19user 0.00system 1:01.80elapsed 399%CPU (0avgtext+0avgdata 1844maxresident)k
+0inputs+0outputs (0major+100minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [roquer|12CPUs] param1=40000000000, param2=32
+Código de salida: 0
+STDOUT:
+N=40000000000  Threads=32
+Integral = 3.141592653589  error = 6.191e-13
+Time = 27.571370 sec
+
+STDERR:
+srun: job 28404894 queued and waiting for resources
+srun: job 28404894 has been allocated resources
+327.91user 0.00system 0:27.57elapsed 1189%CPU (0avgtext+0avgdata 1956maxresident)k
+0inputs+0outputs (0major+158minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [roquer|12CPUs] param1=60000000000, param2=2
+Código de salida: 0
+STDOUT:
+N=60000000000  Threads=2
+Integral = 3.141592653593  error = 2.963e-12
+Time = 117.897531 sec
+
+STDERR:
+srun: job 28404899 queued and waiting for resources
+srun: job 28404899 has been allocated resources
+235.78user 0.00system 1:57.89elapsed 199%CPU (0avgtext+0avgdata 1836maxresident)k
+0inputs+0outputs (0major+98minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [roquer|12CPUs] param1=40000000000, param2=16
+Código de salida: 0
+STDOUT:
+N=40000000000  Threads=16
+Integral = 3.141592653590  error = 1.932e-13
+Time = 27.689385 sec
+
+STDERR:
+srun: job 28404893 queued and waiting for resources
+srun: job 28404893 has been allocated resources
+325.86user 0.00system 0:27.69elapsed 1176%CPU (0avgtext+0avgdata 1876maxresident)k
+0inputs+0outputs (0major+126minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [roquer|12CPUs] param1=40000000000, param2=128
+Código de salida: 0
+STDOUT:
+N=40000000000  Threads=128
+Integral = 3.141592653590  error = 1.434e-13
+Time = 27.495156 sec
+
+STDERR:
+srun: job 28404897 queued and waiting for resources
+srun: job 28404897 has been allocated resources
+329.83user 0.00system 0:27.49elapsed 1199%CPU (0avgtext+0avgdata 2812maxresident)k
+0inputs+0outputs (0major+359minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [roquer|12CPUs] param1=40000000000, param2=256
+Código de salida: 0
+STDOUT:
+N=40000000000  Threads=256
+Integral = 3.141592653590  error = 1.732e-14
+Time = 27.521727 sec
+
+STDERR:
+srun: job 28404898 queued and waiting for resources
+srun: job 28404898 has been allocated resources
+329.46user 0.00system 0:27.52elapsed 1197%CPU (0avgtext+0avgdata 3884maxresident)k
+0inputs+0outputs (0major+627minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [roquer|12CPUs] param1=60000000000, param2=8
+Código de salida: 0
+STDOUT:
+N=60000000000  Threads=8
+Integral = 3.141592653590  error = 2.487e-13
+Time = 46.416523 sec
+
+STDERR:
+srun: job 28404919 queued and waiting for resources
+srun: job 28404919 has been allocated resources
+309.21user 0.00system 0:46.41elapsed 666%CPU (0avgtext+0avgdata 1760maxresident)k
+0inputs+0outputs (0major+106minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [roquer|12CPUs] param1=60000000000, param2=16
+Código de salida: 0
+STDOUT:
+N=60000000000  Threads=16
+Integral = 3.141592653589  error = 6.875e-13
+Time = 41.613593 sec
+
+STDERR:
+srun: job 28404920 queued and waiting for resources
+srun: job 28404920 has been allocated resources
+492.20user 0.00system 0:41.61elapsed 1182%CPU (0avgtext+0avgdata 1860maxresident)k
+0inputs+0outputs (0major+126minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [roquer|12CPUs] param1=60000000000, param2=64
+Código de salida: 0
+STDOUT:
+N=60000000000  Threads=64
+Integral = 3.141592653590  error = 2.913e-13
+Time = 41.246727 sec
+
+STDERR:
+srun: job 28404922 queued and waiting for resources
+srun: job 28404922 has been allocated resources
+494.67user 0.00system 0:41.24elapsed 1199%CPU (0avgtext+0avgdata 6328maxresident)k
+0inputs+0outputs (0major+228minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [roquer|12CPUs] param1=60000000000, param2=32
+Código de salida: 0
+STDOUT:
+N=60000000000  Threads=32
+Integral = 3.141592653590  error = 9.770e-14
+Time = 41.419535 sec
+
+STDERR:
+srun: job 28404921 queued and waiting for resources
+srun: job 28404921 has been allocated resources
+492.64user 0.00system 0:41.42elapsed 1189%CPU (0avgtext+0avgdata 2008maxresident)k
+0inputs+0outputs (0major+160minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [roquer|12CPUs] param1=60000000000, param2=128
+Código de salida: 0
+STDOUT:
+N=60000000000  Threads=128
+Integral = 3.141592653590  error = 3.642e-14
+Time = 41.247444 sec
+
+STDERR:
+srun: job 28404923 queued and waiting for resources
+srun: job 28404923 has been allocated resources
+494.20user 0.00system 0:41.24elapsed 1198%CPU (0avgtext+0avgdata 2808maxresident)k
+0inputs+0outputs (0major+360minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [roquer|12CPUs] param1=60000000000, param2=256
+Código de salida: 0
+STDOUT:
+N=60000000000  Threads=256
+Integral = 3.141592653590  error = 3.553e-15
+Time = 41.261576 sec
+
+STDERR:
+srun: job 28404924 queued and waiting for resources
+srun: job 28404924 has been allocated resources
+494.29user 0.00system 0:41.26elapsed 1197%CPU (0avgtext+0avgdata 3880maxresident)k
+0inputs+0outputs (0major+628minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
