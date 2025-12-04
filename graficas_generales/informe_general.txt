@@ -1,0 +1,40 @@
+====================================================================================================
+INFORME GENERAL DE RENDIMIENTO
+====================================================================================================
+
+CONFIGURACIONES ANALIZADAS:
+----------------------------------------------------------------------------------------------------
+
+ORCA:
+  - CPUs disponibles: 128
+  - Valores de N probados: 4
+  - Total de ejecuciones: 32
+
+ROQUER:
+  - CPUs disponibles: 12
+  - Valores de N probados: 4
+  - Total de ejecuciones: 32
+
+
+MEJOR CONFIGURACIÓN GLOBAL:
+----------------------------------------------------------------------------------------------------
+Simulador: ORCA
+Tamaño del problema: N = 10G
+Número de threads: 128
+Tiempo: 0.235563 segundos
+Error: 3.109e-15
+
+
+PEOR CONFIGURACIÓN GLOBAL:
+----------------------------------------------------------------------------------------------------
+Simulador: ROQUER
+Tamaño del problema: N = 60G
+Número de threads: 2
+Tiempo: 117.897531 segundos
+
+
+SPEEDUP PROMEDIO MÁXIMO (Base: 2 threads):
+----------------------------------------------------------------------------------------------------
+ORCA: 26.90x (promedio: 14.78x)
+ROQUER: 2.86x (promedio: 2.67x)
+

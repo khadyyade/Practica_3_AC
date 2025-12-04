@@ -1,0 +1,63 @@
+RESULTADOS DE SIMULACIONES SECUENCIALES
+======================================================================
+
+
+Configuración: [roquer|12CPUs|SECUENCIAL] N=10000000000
+Código de salida: 0
+STDOUT:
+N=10000000000 [0.000000, 1.000000]
+Integral ~ 3.141592653589 error = 4.352e-13
+Time = 38.963964 sec
+
+STDERR:
+srun: job 28407716 queued and waiting for resources
+srun: job 28407716 has been allocated resources
+38.96user 0.00system 0:38.96elapsed 99%CPU (0avgtext+0avgdata 1504maxresident)k
+40inputs+0outputs (1major+71minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [roquer|12CPUs|SECUENCIAL] N=20000000000
+Código de salida: 0
+STDOUT:
+N=20000000000 [0.000000, 1.000000]
+Integral ~ 3.141592653587 error = 2.377e-12
+Time = 77.851476 sec
+
+STDERR:
+srun: job 28407719 queued and waiting for resources
+srun: job 28407719 has been allocated resources
+77.85user 0.00system 1:17.85elapsed 100%CPU (0avgtext+0avgdata 1516maxresident)k
+0inputs+0outputs (0major+73minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [roquer|12CPUs|SECUENCIAL] N=40000000000
+Código de salida: 0
+STDOUT:
+N=40000000000 [0.000000, 1.000000]
+Integral ~ 3.141592653590 error = 2.229e-13
+Time = 155.735510 sec
+
+STDERR:
+srun: job 28407722 queued and waiting for resources
+srun: job 28407722 has been allocated resources
+155.73user 0.00system 2:35.73elapsed 99%CPU (0avgtext+0avgdata 1532maxresident)k
+0inputs+0outputs (0major+72minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [roquer|12CPUs|SECUENCIAL] N=60000000000
+Código de salida: 0
+STDOUT:
+N=60000000000 [0.000000, 1.000000]
+Integral ~ 3.141592653588 error = 2.073e-12
+Time = 233.582639 sec
+
+STDERR:
+srun: job 28407729 queued and waiting for resources
+srun: job 28407729 has been allocated resources
+233.58user 0.00system 3:53.58elapsed 99%CPU (0avgtext+0avgdata 1536maxresident)k
+0inputs+0outputs (0major+75minor)pagefaults 0swaps
+
+----------------------------------------------------------------------

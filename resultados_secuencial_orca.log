@@ -1,0 +1,61 @@
+RESULTADOS DE SIMULACIONES SECUENCIALES
+======================================================================
+
+
+Configuración: [orca|128CPUs|SECUENCIAL] N=10000000000
+Código de salida: 0
+STDOUT:
+N=10000000000 [0.000000, 1.000000]
+Integral ~ 3.141592653589 error = 4.352e-13
+Time = 11.688976 sec
+
+STDERR:
+srun: job 28407507 queued and waiting for resources
+srun: job 28407507 has been allocated resources
+11.68user 0.00system 0:11.69elapsed 99%CPU (0avgtext+0avgdata 1508maxresident)k
+40inputs+0outputs (1major+71minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [orca|128CPUs|SECUENCIAL] N=20000000000
+Código de salida: 0
+STDOUT:
+N=20000000000 [0.000000, 1.000000]
+Integral ~ 3.141592653587 error = 2.377e-12
+Time = 23.353781 sec
+
+STDERR:
+srun: job 28407508 queued and waiting for resources
+srun: job 28407508 has been allocated resources
+23.35user 0.00system 0:23.35elapsed 100%CPU (0avgtext+0avgdata 1488maxresident)k
+0inputs+0outputs (0major+73minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [orca|128CPUs|SECUENCIAL] N=40000000000
+Código de salida: 0
+STDOUT:
+N=40000000000 [0.000000, 1.000000]
+Integral ~ 3.141592653590 error = 2.229e-13
+Time = 46.686515 sec
+
+STDERR:
+srun: job 28407509 queued and waiting for resources
+srun: job 28407509 has been allocated resources
+46.68user 0.00system 0:46.68elapsed 100%CPU (0avgtext+0avgdata 1512maxresident)k
+0inputs+0outputs (0major+73minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
+
+Configuración: [orca|128CPUs|SECUENCIAL] N=60000000000
+Código de salida: 0
+STDOUT:
+N=60000000000 [0.000000, 1.000000]
+Integral ~ 3.141592653588 error = 2.073e-12
+Time = 70.014848 sec
+
+STDERR:
+70.01user 0.00system 1:10.01elapsed 99%CPU (0avgtext+0avgdata 1432maxresident)k
+0inputs+0outputs (0major+72minor)pagefaults 0swaps
+
+----------------------------------------------------------------------
